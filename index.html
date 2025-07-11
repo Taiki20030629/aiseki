@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>相席ラウンジシミュレーター</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    h1 { color: #007acc; }
+    label { display: block; margin: 0.5em 0 0.2em; }
+    select, button { padding: 0.5em; font-size: 1em; }
+    #result { margin-top: 1em; color: green; }
+  </style>
+</head>
+<body>
+  <h1>相席ラウンジシミュレーター</h1>
+  <label for="group-size">来店人数:</label>
+  <select id="group-size">
+    <option value="2">2名</option>
+    <option value="3">3名</option>
+    <option value="4">4名</option>
+  </select>
+
+  <label for="male-age">男性年齢上限:</label>
+  <select id="male-age">
+    <option value="50">50歳</option>
+    <option value="45">45歳</option>
+    <option value="40">40歳</option>
+  </select>
+
+  <label for="female-age">女性年齢上限:</label>
+  <select id="female-age">
+    <option value="39">39歳</option>
+    <option value="35">35歳</option>
+    <option value="30">30歳</option>
+  </select>
+
+  <button onclick="simulate()">相席する</button>
+
+  <div id="result"></div>
+
+  <script>
+    function simulate() {
+      const groupSize = document.getElementById('group-size').value;
+      const maleAge = document.getElementById('male-age').value;
+      const femaleAge = document.getElementById('female-age').value;
+      const result = document.getElementById('result');
+      result.textContent = `来店人数は${groupSize}名、男性年齢上限は${maleAge}歳、女性年齢上限は${femaleAge}歳で相席を開始します！`;
+    }
+  </script>
+</body>
+</html>
